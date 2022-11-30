@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  tomcat:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+
+    ports:
+      - "8080:8080"
+#      - "8443:8443"
+
+#    volumes:
+#      - ./logs:/usr/local/tomcat/logs
+#      - ./conf:/usr/local/tomcat/conf
+#      - ./manager/META-INF:/usr/local/tomcat/webapps/manager/META-INF
+#      - ./ssl:/usr/local/tomcat/ssl
+

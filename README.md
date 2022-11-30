@@ -48,3 +48,8 @@ En el fichero tomcat-user.xml añadir la siguiente línea:
 `<user username="useradmin" password="useradmin" roles="admin-gui, manager-gui, manager-status"/>`
 
 
+Desde docker no se puede acceder a la gestión del servidor tomcat porque solo está habilitado el acceso desde la misma máquina donde está contenido el tomcat. Por eso hay que modificar el archivo webapps/manager/META-INF/context.xml añadiendo comentando la restricción de acceso desde el exterior
+`<!--
+<Valve className="org.apache.catalina.valves.RemoteAddrValve"
+         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+-->`
